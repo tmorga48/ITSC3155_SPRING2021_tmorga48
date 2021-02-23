@@ -53,5 +53,12 @@ def longest_consecutive_repeating_char(s):
 # and ignore spaces (i.e. case insensitive).
 def is_palindrome(s):
   # YOUR CODE HERE
+  s = s.lower()
+  s = s.replace(' ', '')
 
-  return
+  for i in range(len(s)//2):
+    if s[i] != s[-1-i]:
+          return False
+   
+  return True
+
