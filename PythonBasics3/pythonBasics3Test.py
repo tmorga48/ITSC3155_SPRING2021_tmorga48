@@ -28,6 +28,12 @@ class TestPythonBasicsOne(unittest.TestCase):
 
         self.assertEqual(pythonBasics3.ends_with_number("Blue plus purple equals 5"), True)
 
+        self.assertEqual(pythonBasics3.ends_with_number("Hello World"), True)
+
+        self.assertEqual(pythonBasics3.ends_with_number("I love computer science"), False)
+
+        self.assertEqual(pythonBasics3.ends_with_number("Software Engineering is fun"), True)
+
         # Please add three more test cases following the order above
 
 
