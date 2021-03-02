@@ -14,11 +14,13 @@ import re
 # Note: Be sure to use RegEx and it works for both upper and lower case and for nonletters!
 
 def ends_with_consonant(s):
+  x = s[len(s)-1]
+  x = x.lower()
 
+  if x == 'a' or x == 'e' or x == 'i' or x == 'o' or x == 'u':
+    return False
 
-  return
-
-
+  return True
 
 
  # Part B. ends_with_number
@@ -27,8 +29,12 @@ def ends_with_consonant(s):
 # (For our purposes, a number is any character that is 0,1,2,3,4,5,6,7,8, or 9.)
 # Note: Be sure to use RegEx!
 def ends_with_number(s):
+  #x = s[len(s)-1]
 
-  return
+  #if x > -1:
+    #return True
+
+  return 
 
 
 # Part C. binary_multiple_of_6
