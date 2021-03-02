@@ -29,12 +29,13 @@ def ends_with_consonant(s):
 # (For our purposes, a number is any character that is 0,1,2,3,4,5,6,7,8, or 9.)
 # Note: Be sure to use RegEx!
 def ends_with_number(s):
-  #x = s[len(s)-1]
+  x = s[len(s)-1]
+  x = ord(x)
 
-  #if x > -1:
-    #return True
+  if x > 47 and x < 58:
+    return True
 
-  return 
+  return False
 
 
 # Part C. binary_multiple_of_6
