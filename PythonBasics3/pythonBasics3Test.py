@@ -34,6 +34,12 @@ class TestPythonBasicsOne(unittest.TestCase):
 
         self.assertEqual(pythonBasics3.ends_with_number("Blue plus purple equals 5"), True)
 
+        self.assertEqual(pythonBasics3.ends_with_number("weipongfwergh"), False)
+
+        self.assertEqual(pythonBasics3.ends_with_number("Hello World 12"), True)
+
+        self.assertEqual(pythonBasics3.ends_with_number("Hello World"), False)
+
         # Please add three more test cases following the order above
 
 
@@ -47,6 +53,7 @@ class TestPythonBasicsOne(unittest.TestCase):
         self.assertEqual(pythonBasics3.binary_multiple_of_6("111111"), False)
 
         self.assertEqual(pythonBasics3.binary_multiple_of_6("3"), False)
+
 
 
 
