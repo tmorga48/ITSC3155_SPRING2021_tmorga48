@@ -12,10 +12,22 @@
 
 def count_threes(n):
   # YOUR CODE HERE
-  x = 0
-  x = n//3
+  c3 = n.count("3")
+  c6 = n.count("6")
+  c9 = n.count("9")
 
-  return x
+  d = dict([
+    ('count3' , c3),
+    ('count6' , c6),
+    ('count9' , c9)
+  ])
+
+  if d['count3'] > d['count6'] and d['count3'] > d['count9']:
+    return 3
+  if d['count6'] > d['count3'] and d['count6'] > d['count9']:
+    return 6
+  if d['count9'] > d['count3'] and d['count9'] > d['count6']:
+    return 9  
 
 
 # Part B. longest_consecutive_repeating_char
@@ -25,9 +37,8 @@ def longest_consecutive_repeating_char(s):
   # YOUR CODE HERE
   n = len(s) 
   count = 0
-  key = s[0] 
   cur_count = 1
-  
+  d = dict()
    
   for i in range(n): 
           
@@ -38,10 +49,19 @@ def longest_consecutive_repeating_char(s):
     else: 
         if cur_count > count: 
             count = cur_count 
-            key = s[i] 
-        cur_count = 1
+            d[s[i]] = cur_count
+            cur_count = 1
   
-  return key 
+  m = max(d.values())
+  a = [] 
+  
+  for keys in d.keys():
+    if d[keys] == m:
+      a.append(keys)
+
+  return a    
+
+   
 
 
 
