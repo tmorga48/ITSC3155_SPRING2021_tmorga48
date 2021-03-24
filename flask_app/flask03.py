@@ -12,30 +12,32 @@ app = Flask(__name__)     # create an app
 # get called. What it returns is what is shown as the web page
 @app.route('/index')
 def index():
-    a_user = {'name':'Thomas', 'email':'mogli@uncc.edu'}
+    a_user = {'name':'Thomas Morgan', 'email':'mogli@uncc.edu'}
 
     return render_template('index.html', user = a_user)
 
 @app.route('/notes')
 def get_notes():
+    a_user = {'name':'Thomas Morgan', 'email':'mogli@uncc.edu'}
     notes = {1: {'title': 'First Note', 'text': 'This is my first note', 'date': '10-1-2020'},
              2: {'title': 'Second Note', 'text': 'This is my second note', 'date': '10-2-2020'}
              }
 
-    return render_template('notes.html', notes = notes)
+    return render_template('notes.html', notes = notes, user = a_user)
 
 @app.route('/notes/<note_id>')
 def get_note(note_id):
+    a_user = {'name':'Thomas Morgan', 'email':'mogli@uncc.edu'}
     notes = {1: {'title': 'First Note', 'text': 'This is my first note', 'date': '10-1-2020'},
              2: {'title': 'Second Note', 'text': 'This is my second note', 'date': '10-2-2020'},
              3: {'title': 'Third Note', 'text': 'This is my third note', 'date': '10-3-2020'}
              }
 
-    return render_template('note.html', note = notes[int(note_id)])
+    return render_template('note.html', note = notes[int(note_id)], user = a_user)
 
 @app.route('/notes/new')
 def new_note():
-    a_user = {'name':'Mogli', 'email':'mogli@uncc.edu'}
+    a_user = {'name':'Thomas Morgan', 'email':'mogli@uncc.edu'}
 
     return render_template('new.html', user = a_user)
 
